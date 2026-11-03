@@ -7,17 +7,10 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
-    <link rel="styl
-
-
-Rituviha Escapes Central Hub
-
-
-
-$0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cabinet+Grotesk:wght@500;700;800;900&display=swap" rel="stylesheet">
-    <!-- Three.js for 3D Nature Background Animation -->
+    <!-- Three.js for Background Visuals -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
         tailwind.config = {
@@ -32,11 +25,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                             800: '#0b3b27',
                             900: '#062317',
                             950: '#02120b',
-                        },
-                        leaf: {
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
                         },
                         amber: {
                             400: '#fbbf24',
@@ -80,41 +68,33 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
             background: linear-gradient(135deg, #2d1b0e 0%, #1a1008 100%); 
             border: 1px solid rgba(251, 191, 36, 0.4); 
         }
-        .accordion-content {
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        }
     </style>
 </head>
 <body class="text-slate-100 min-h-screen font-sans selection:bg-amber-500 selection:text-slate-950 flex flex-col justify-between relative overflow-x-hidden">
 
-    <!-- 3D Nature Background Canvas -->
+    <!-- 3D Nature Canvas -->
     <div id="canvas-container"></div>
 
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 w-full z-50 bg-forest-950/95 backdrop-blur-md border-b border-forest-800">
         <div class="max-w-6xl mx-auto px-4 py-2.5 flex items-center justify-between">
             <a href="#" class="flex items-center space-x-3">
-                <!-- Redesigned High-Fidelity Rituviha Escapes Emblem Logo -->
+                <!-- Round Emblem SVG Logo -->
                 <div class="w-12 h-12 rounded-full bg-forest-900 border-2 border-amber-500 flex items-center justify-center shadow-lg shadow-amber-500/10 shrink-0">
                     <svg viewBox="0 0 120 120" class="w-10 h-10">
-                        <!-- Outer Gold Circular Frame -->
                         <circle cx="60" cy="60" r="56" fill="#062317" stroke="#e5a93c" stroke-width="4"/>
                         <circle cx="60" cy="60" r="50" fill="none" stroke="#e5a93c" stroke-width="1.5" stroke-dasharray="3,3"/>
                         
-                        <!-- Mountains & Pines Background -->
                         <path d="M 20 75 L 45 40 L 65 65 L 85 32 L 102 75 Z" fill="#0b3b27" stroke="#e5a93c" stroke-width="2"/>
                         <path d="M 38 75 L 55 48 L 72 75 Z" fill="#16a34a" opacity="0.6"/>
                         
-                        <!-- Sun / Moon Crest -->
                         <circle cx="78" cy="38" r="6" fill="#fbbf24"/>
 
-                        <!-- 4x4 Offroad Jeep Silhouette -->
                         <path d="M 45 78 L 75 78 L 73 68 L 52 68 Z" fill="#e5a93c"/>
                         <rect x="54" y="64" width="16" height="6" rx="1.5" fill="#02120b"/>
                         <circle cx="52" cy="78" r="4.5" fill="#02120b" stroke="#e5a93c" stroke-width="1.5"/>
                         <circle cx="68" cy="78" r="4.5" fill="#02120b" stroke="#e5a93c" stroke-width="1.5"/>
 
-                        <!-- Circular Text Arc -->
                         <path id="textPath" d="M 25 60 A 35 35 0 0 1 95 60" fill="none"/>
                         <text font-size="9" font-weight="900" fill="#ffffff" letter-spacing="1.5" text-anchor="middle">
                             <textPath href="#textPath" startOffset="50%">RITUVIHA</textPath>
@@ -140,7 +120,7 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
     <!-- Main Content -->
     <main class="pt-24 flex-grow z-10 relative">
 
-        <!-- Nature Hero Banner -->
+        <!-- Hero Section -->
         <section class="max-w-6xl mx-auto px-4 py-4 text-center relative">
             <div class="inline-flex items-center space-x-2 px-4 py-1 rounded-full badge-wood text-amber-400 text-xs font-bold mb-3">
                 <i class="fa-solid fa-fire-flame-curved text-amber-400"></i>
@@ -155,7 +135,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                 Come as strangers, leave as family! <strong>4 Nights / 3 Days</strong> of scenic hill station adventures from Chennai.
             </p>
 
-            <!-- Quick Trip Highlights Grid -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto mt-6">
                 <div class="nature-card p-3 rounded-2xl text-center">
                     <i class="fa-solid fa-train text-amber-400 text-lg mb-1"></i>
@@ -179,7 +158,7 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                 </div>
             </div>
 
-            <!-- Central Hub Toggle Navigation -->
+            <!-- Tab Buttons -->
             <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mt-8">
                 <button onclick="switchTab('trips')" id="tabBtn-trips" 
                         class="px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition flex items-center space-x-2 bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/25">
@@ -194,7 +173,7 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
             </div>
         </section>
 
-        <!-- TAB 1: STRANGER TRIPS (KANTHALLOOR, MARAYOOR & MUNNAR) -->
+        <!-- TAB 1: STRANGER TRIPS -->
         <section id="tab-trips" class="max-w-6xl mx-auto px-4 mb-16">
             <div class="text-center my-6">
                 <span class="text-amber-400 text-xs font-bold tracking-widest uppercase">UPCOMING DEPARTURE BATCHES &bull; CHENNAI CENTRAL PICKUP 🚂</span>
@@ -202,10 +181,9 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                 <p class="text-xs sm:text-sm text-slate-300 mt-1">Train Tickets Included &bull; Pay ₹2,000 Advance to Reserve Slot!</p>
             </div>
 
-            <!-- Trip Packages Grid (3 Featured Trips) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
 
-                <!-- Trip 1: Nov 26 - 30 -->
+                <!-- Nov Batch -->
                 <div class="nature-card rounded-3xl p-5 flex flex-col justify-between border-2 border-amber-500/40 relative">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
@@ -251,7 +229,7 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                     </div>
                 </div>
 
-                <!-- Trip 2: Dec 26 - 30 -->
+                <!-- Dec Batch -->
                 <div class="nature-card rounded-3xl p-5 flex flex-col justify-between border-2 border-emerald-500/40 relative">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
@@ -297,12 +275,12 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                     </div>
                 </div>
 
-                <!-- Trip 3: Jan 28 - Feb 01 -->
+                <!-- Jan Batch -->
                 <div class="nature-card rounded-3xl p-5 flex flex-col justify-between border-2 border-amber-500/40 relative">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
                             <span class="bg-amber-500/20 text-amber-400 border border-amber-500/40 px-3 py-1 rounded-full text-[11px] font-bold">
-                                🏔️ JAN 28 – FEB 01, 2027 &bull; MUNNAR BATCH
+                                🏔️ JAN 28 – FEB 01 &bull; MUNNAR BATCH
                             </span>
                             <span class="text-[10px] font-bold text-slate-400 bg-forest-950 px-2.5 py-1 rounded-md">JANUARY</span>
                         </div>
@@ -345,7 +323,7 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
 
             </div>
 
-            <!-- Detailed Interactive Itinerary Display -->
+            <!-- Itinerary Display -->
             <div id="itinerary-display" class="nature-card rounded-3xl p-6 sm:p-8 nature-glow border-2 border-amber-500/40 mb-12">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 pb-4 border-b border-forest-800">
                     <div>
@@ -363,13 +341,10 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                     </a>
                 </div>
 
-                <!-- Itinerary Timeline -->
-                <div id="itin-timeline" class="space-y-4">
-                    <!-- Loaded dynamically via JS -->
-                </div>
+                <div id="itin-timeline" class="space-y-4"></div>
             </div>
 
-            <!-- SECTION: ADVANCE PAYMENT & BOOKING FORM -->
+            <!-- Booking Section -->
             <section id="booking-section" class="scroll-mt-24 mb-12">
                 <div class="text-center mb-6">
                     <span class="bg-amber-500/20 text-amber-400 border border-amber-500/40 px-3.5 py-1 rounded-full text-xs font-bold">
@@ -385,7 +360,7 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-                    <!-- Left Column: Direct UPI Payment Box -->
+                    <!-- UPI Box -->
                     <div class="nature-card rounded-3xl p-6 border-2 border-amber-500/40 flex flex-col justify-between space-y-5">
                         <div>
                             <div class="flex justify-between items-center mb-3">
@@ -396,7 +371,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                             </div>
                             <p class="text-xs text-amber-300 font-semibold mb-4">Advance Amount: ₹2,000 / seat</p>
 
-                            <!-- Official UPI ID Box -->
                             <div class="bg-forest-950 p-4 rounded-2xl border border-forest-800 space-y-2">
                                 <span class="text-[11px] text-slate-400 font-bold block uppercase tracking-wider">OFFICIAL UPI ID</span>
                                 <div class="flex justify-between items-center bg-forest-900 px-3.5 py-2.5 rounded-xl border border-forest-800">
@@ -408,7 +382,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                                 <span class="text-[11px] text-slate-400 block text-center pt-1">GPay / PhonePe / Paytm / Contact: <strong>7358733966</strong></span>
                             </div>
 
-                            <!-- Payment App Trigger Buttons -->
                             <div class="mt-5 space-y-2">
                                 <span class="text-[11px] text-slate-400 font-bold block text-center">Click your preferred app icon to pay directly:</span>
                                 <div class="grid grid-cols-3 gap-3">
@@ -438,7 +411,7 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                         </div>
                     </div>
 
-                    <!-- Right Column: Interactive Booking Form -->
+                    <!-- Booking Form -->
                     <div class="nature-card rounded-3xl p-6 border-2 border-amber-500/40">
                         <div class="mb-4">
                             <h3 class="font-display text-xl font-extrabold text-white">Submit Booking Form</h3>
@@ -493,7 +466,7 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                 </div>
             </section>
 
-            <!-- SECTION: TRIP GUIDELINES & BOOKING POLICY -->
+            <!-- Policy & Guidelines Accordions -->
             <section class="max-w-6xl mx-auto mb-10">
                 <div class="text-center mb-6">
                     <span class="badge-wood text-amber-400 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
@@ -507,7 +480,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                     
-                    <!-- Accordion Item 1: Guidelines -->
                     <div class="nature-card rounded-3xl p-5 border border-forest-800">
                         <button onclick="toggleAccordion('acc-1')" class="w-full flex justify-between items-center text-left">
                             <div class="flex items-center space-x-3">
@@ -542,7 +514,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                         </div>
                     </div>
 
-                    <!-- Accordion Item 2: Booking & Cancellation Policy -->
                     <div class="nature-card rounded-3xl p-5 border border-rose-500/30">
                         <button onclick="toggleAccordion('acc-2')" class="w-full flex justify-between items-center text-left">
                             <div class="flex items-center space-x-3">
@@ -574,7 +545,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                         </div>
                     </div>
 
-                    <!-- Accordion Item 3: Packing Checklist -->
                     <div class="nature-card rounded-3xl p-5 border border-forest-800">
                         <button onclick="toggleAccordion('acc-3')" class="w-full flex justify-between items-center text-left">
                             <div class="flex items-center space-x-3">
@@ -621,8 +591,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
         <!-- TAB 2: STRANGERS MEET SECTION -->
         <section id="tab-meets" class="max-w-5xl mx-auto px-4 mb-16 hidden">
             <div class="nature-card rounded-3xl p-6 sm:p-8 nature-glow border-2 border-amber-500/40 relative overflow-hidden">
-                
-                <!-- Event Header Badges -->
                 <div class="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-forest-800">
                     <div class="flex flex-wrap items-center gap-2">
                         <span class="badge-wood text-amber-400 px-3.5 py-1 rounded-full text-xs font-bold flex items-center space-x-1.5">
@@ -639,8 +607,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Main Event Poster Content -->
                     <div class="lg:col-span-2 space-y-6">
                         <div>
                             <h2 class="font-display text-4xl font-black text-white tracking-tight">
@@ -649,7 +615,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                             <p class="text-slate-300 text-sm mt-1">Games, School Nostalgia, Beach Walk &amp; Great Conversations!</p>
                         </div>
 
-                        <!-- Games Highlight Cards -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="bg-forest-950/90 p-4 rounded-2xl border border-amber-500/30 space-y-1">
                                 <div class="text-amber-400 font-extrabold text-xs tracking-wider">GAME 1</div>
@@ -664,13 +629,11 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                             </div>
                         </div>
 
-                        <!-- Special Prize Perks -->
                         <div class="bg-amber-500/10 border border-amber-500/30 p-4 rounded-2xl flex items-center space-x-3 text-amber-300 text-xs sm:text-sm font-semibold">
                             <i class="fa-solid fa-gift text-2xl text-amber-400 shrink-0"></i>
                             <span>🎁 <strong>SPECIAL PRIZES</strong> awarded for the best participants during activities!</span>
                         </div>
 
-                        <!-- Event Time & Venue Grid -->
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
                             <div class="bg-forest-950/80 p-3.5 rounded-xl border border-forest-800">
                                 <span class="text-[11px] text-slate-400 block font-semibold">DATE &amp; TIME</span>
@@ -700,9 +663,7 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
 
                     </div>
 
-                    <!-- Right Column: Registration Details -->
                     <div class="lg:col-span-1 bg-forest-950/90 p-5 rounded-2xl border border-forest-800 flex flex-col justify-between space-y-6">
-                        
                         <div class="space-y-4">
                             <div class="text-center pb-3 border-b border-forest-800">
                                 <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">QUICK REGISTRATION</span>
@@ -716,7 +677,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                                 <span>Register via WhatsApp</span>
                             </a>
 
-                            <!-- UPI Payment Box -->
                             <div class="bg-forest-900/80 p-3.5 rounded-xl border border-forest-800 space-y-2">
                                 <span class="text-[11px] text-slate-400 font-bold block">DIRECT UPI PAYMENT:</span>
                                 <div class="flex justify-between items-center bg-forest-950 px-3 py-2 rounded-lg border border-forest-800">
@@ -737,16 +697,13 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                                 <i class="fa-solid fa-arrow-right text-[10px]"></i>
                             </a>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- JavaScript Controls -->
+        <!-- Script Logic -->
         <script>
-            // Tab Switcher
             function switchTab(tab) {
                 const tripsSec = document.getElementById('tab-trips');
                 const meetsSec = document.getElementById('tab-meets');
@@ -756,19 +713,16 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                 if (tab === 'trips') {
                     tripsSec.classList.remove('hidden');
                     meetsSec.classList.add('hidden');
-
                     btnTrips.className = 'px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition flex items-center space-x-2 bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/25';
                     btnMeets.className = 'px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition flex items-center space-x-2 bg-forest-900 text-slate-300 border border-forest-800 hover:text-white hover:border-amber-500/50';
                 } else {
                     meetsSec.classList.remove('hidden');
                     tripsSec.classList.add('hidden');
-
                     btnMeets.className = 'px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition flex items-center space-x-2 bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/25';
                     btnTrips.className = 'px-5 py-3 rounded-2xl font-black text-xs sm:text-sm transition flex items-center space-x-2 bg-forest-900 text-slate-300 border border-forest-800 hover:text-white hover:border-amber-500/50';
                 }
             }
 
-            // Accordion Toggle function
             function toggleAccordion(id) {
                 const content = document.getElementById(id);
                 const icon = document.getElementById(id + '-icon');
@@ -781,7 +735,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                 }
             }
 
-            // Select Batch Helper for Form
             function selectBatchInForm(batchName) {
                 const select = document.getElementById('formBatch');
                 for (let i = 0; i < select.options.length; i++) {
@@ -792,7 +745,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                 }
             }
 
-            // Form Submit to WhatsApp
             function handleFormSubmit(e) {
                 e.preventDefault();
                 const name = document.getElementById('formName').value;
@@ -804,7 +756,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                 window.open(`https://wa.me/917358733966?text=${text}`, '_blank');
             }
 
-            // Copy UPI ID
             function copyUpi() {
                 const upiText = "rituvihaescapes@ptyes";
                 const tempInput = document.createElement("input");
@@ -816,7 +767,6 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                 alert("UPI ID copied: " + upiText);
             }
 
-            // Itineraries Data
             const itineraries = {
                 'munnar': {
                     badge: "MUNNAR — THE KASHMIR OF KERALA",
@@ -874,13 +824,11 @@ $0esheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/al
                 document.getElementById('itinerary-display').scrollIntoView({ behavior: 'smooth' });
             }
 
-            // Load Munnar by default on load
             window.addEventListener('load', () => {
                 showItinerary('munnar');
             });
         </script>
 
-        <!-- Why Choose Section -->
         <section class="max-w-5xl mx-auto px-4 py-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="nature-card p-5 rounded-2xl text-center space-y-2">
